@@ -1,0 +1,21 @@
+#set($title = "home page")
+#set($keywords = "fis3,jello")
+#set($description = "home page for startkit")
+
+#extends("../layout/layout.vm")
+
+    #block("style")
+        <link rel="stylesheet" type="text/css" href="src/pages/home/style.less?__inline" />
+    #end
+
+    #block("body_content")
+        <a href="/config">Config Page</a>
+    #end
+
+
+
+    #script()
+       require(['src/pages/home/index'])
+    #end
+
+#end

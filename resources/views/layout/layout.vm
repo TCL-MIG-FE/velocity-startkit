@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+#html("src/components/mod/mod.js")
+    #head()
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>$!title</title>
+        <meta name="keywords" content="$!keywords" />
+        <meta name="description" content="$!description" />
+        #require("src/layouts/css/index.less")
+        #block("style")#end
+    #end
+
+    #body()
+
+        <script type="text/javascript">
+            window.config = {
+                staticPath: '$request.contextPath/static',
+                context: '$request.contextPath'
+            };
+        </script>
+
+##        #widget("../widget/header.vm")
+        <div class="container p20">
+            #block("body_content")
+            #end
+        </div>
+
+
+        #require('src/components/index')
+
+    #end
+
+
+#end

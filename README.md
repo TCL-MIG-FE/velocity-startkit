@@ -1,7 +1,7 @@
 # Steps
 
-- `npm install -d `
+-  Run `npm install -d ` to install dependencies
 
-- `npm run start`
+-  Run `npm run start` to start mock server
 
-- `npm run build` to generate optimized codes
+-  Run `npm run build` to generate optimized codes

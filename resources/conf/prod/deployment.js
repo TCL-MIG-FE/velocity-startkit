@@ -3,7 +3,7 @@ const needDeploy = function (path) {
         '/test/.*',
         "/static/node_modules",
         '/static/src/layouts',
-        '/static/src/components',
+        '/static/src/modules',
         '/static/src/constants',
         '/static/src/utils',
         '/static/test.json',

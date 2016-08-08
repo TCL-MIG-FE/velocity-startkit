@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-#html("src/components/mod/mod.js")
+#html("src/plugins/mod/mod.js")
     #head()
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -26,7 +26,7 @@
         </div>
 
 
-        #require('src/components/index')
+        #require('src/modules/index')
 
     #end
 

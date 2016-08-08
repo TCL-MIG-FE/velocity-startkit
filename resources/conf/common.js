@@ -18,7 +18,7 @@ module.exports = function (fis) {
     
     return fis.match('{node_modules,src}/**.js', {
         isMod: true
-    }).match('src/components/mod/**.js', {
+    }).match('src/plugins/mod/mod.js', {
         isMod: false,
     }).match('src/**.js', {
         rExt: 'js',

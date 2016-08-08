@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "clean": "fis3 server clean",
-    "release": "fis3 release -wL",
+    "release": "fis3 release -wcL",
     "relase-clean": "run-s clean release",
     "server": "fis3 server start -p 4000 --type jello",
     "rm-static": "rm -rf ../static",

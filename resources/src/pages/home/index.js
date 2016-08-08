@@ -1,4 +1,4 @@
-import {Dialog, $} from '../../components/index';
+import {Dialog, $} from '../../modules/index';
 
 let dialog = new Dialog(" hello from home");
 

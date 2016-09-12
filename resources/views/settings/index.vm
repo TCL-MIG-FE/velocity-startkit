@@ -8,7 +8,7 @@
 
     #block("body_content")
         <div class="section">
-            This is the config page
+            This is the settings page
         </div>
 
          <a href="/"> Back Home Page</a>

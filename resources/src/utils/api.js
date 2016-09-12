@@ -1,16 +1,13 @@
-import $ from "jquery";
+import $ from '../modules/jquery';
 import * as API from "../constants/api";
+import Dialog from '../modules/dialog';
 
 const checkRespStatus = (res) => {
-    if (res.code !== 200) {
-        let deferred = $.Deferred();
-        deferred.reject('Server error occurred');
-        return deferred.promise();
-    }
     let deferred = $.Deferred();
-    if (res && res.code == API['CODE_SUCCESS']) {
+    if (  res.code == API['CODE_SUCCESS']) {
         deferred.resolve(res.data);
     } else {
+        Dialog.error(res.msg || 'Server error found...');
         deferred.reject(res);
     }
     return deferred.promise();
@@ -39,6 +36,8 @@ const postWithForm = (url, params)=> {
 
 
 export default {
+    
+    login: params => post(API.USER_LOGIN, params),
     
     getConfig: () => get(API.GET_CONFIG)
 }

@@ -5,10 +5,10 @@
 
     <ul class="header-menu">
         <li class="#if($activeTab == "tasks") active #end">
-            <a href="/tasks">任务管理</a>
+            <a href="/tasks">Task Management</a>
         </li>
         <li class="#if($activeTab == "settings") active #end">
-            <a href="/settings">用户设置</a>
+            <a href="/settings">Settings</a>
         </li>
     </ul>
 

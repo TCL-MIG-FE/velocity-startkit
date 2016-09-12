@@ -1,4 +1,5 @@
-import Dialog from './dialog/index';
-import  $ from 'jquery';
+import $ from 'jquery';
+import validate from './validator';
+import Dialog from './dialog';
 
-export {Dialog, $};
+export {$, validate, Dialog};

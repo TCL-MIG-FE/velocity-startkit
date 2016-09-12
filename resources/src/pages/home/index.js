@@ -1,9 +1,36 @@
-import {Dialog, $} from '../../modules/index';
+import $ from "../../modules/jquery";
+import Api from "../../utils/api";
+import validate from "../../modules/validator";
 
-let dialog = new Dialog(" hello from home");
+class Page {
+    
+    constructor() {
+        this.init();
+    }
+    
+    init() {
+        this.$form = $("#loginForm");
+        this.bindEvents();
+    }
+    
+    bindEvents() {
+        validate(this.$form, null, $.proxy(this.submit, this));
+    }
+    
+    submit() {
+        let params = {};
+        this.$form.find("input").each((index, item) => {
+            params[item.id || item.name] = $.trim(item.value);
+        });
+        
+        Api.login(params).then(()=> {
+            window.location = '/tasks';
+        });
+    }
+}
 
-dialog.greet();
 
-console.log($.fn.jquery);
+new Page();
+
 
 

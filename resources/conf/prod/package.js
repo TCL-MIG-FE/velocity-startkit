@@ -1,8 +1,6 @@
 module.exports = function (prefix, media) {
     var packagers = {};
     packagers[prefix + '/libs/pkg/common.js'] = [
-        'src/plugins/index.js',
-        'src/plugins/index.js:deps',
         'src/modules/index.js',
         'src/modules/index.js:deps',
         'src/constants/*.js',

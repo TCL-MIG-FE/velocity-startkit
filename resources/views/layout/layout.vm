@@ -19,7 +19,7 @@
             };
         </script>
 
-##        #widget("../widget/header.vm")
+        #widget("../widget/header.vm")
         <div class="container p20">
             #block("body_content")
             #end

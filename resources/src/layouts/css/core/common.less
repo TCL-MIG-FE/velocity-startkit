@@ -1,7 +1,63 @@
-.m10{
-    margin:10px;
+@import "../themes/default";
+
+.m10 {
+    margin: 10px;
 }
 
-.p20{
-    padding:20px;
+.p20 {
+    padding: 20px;
+}
+
+header {
+    min-width: @body-width;
+    padding-left: 30px;
+    height: @header-height;
+    background-color: @header-color;
+    position: relative;
+    overflow: hidden;
+
+    .logo {
+        background: transparent url('../../imags/logo.png?__inline') 0 center no-repeat;
+        padding-left:40px;
+        margin-right: 50px;
+        font-size:16px;
+        float: left;
+        line-height: @header-height;
+        height: 100%;
+        color: #fff;
+
+    }
+
+    ul {
+        overflow: hidden;
+
+        li {
+            height: @header-height;
+            line-height: @header-height;
+            margin-right:30px;
+            display: inline-block;
+            &.active {
+                a {
+                    color: #fff;
+                }
+            }
+
+            a {
+                color: #BDDDFF;
+                text-decoration: none;
+                &:hover {
+                    color: #fff;
+                }
+            }
+        }
+    }
+
+}
+
+body {
+    background-color: transparent;
+
+    >.container{
+        min-width: @body-width;
+    }
 }

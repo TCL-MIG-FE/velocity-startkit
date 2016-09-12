@@ -1,0 +1,412 @@
+{
+    "Demo": [
+        {
+            "url": "/config/getConfig",
+            "desc": "获取配置信息",
+            "mock": true,
+            "res": {
+                "code": 200,
+                "msg": "Get address successfully.",
+                "data": {"user":"larry"}
+            }
+        },
+        {
+            "url": "/agent/list",
+            "desc": "获取agent列表",
+            "mock": true,
+            "res": {
+                "code": 200,
+                "msg": "Get address successfully.",
+                "data": [
+                    {
+                        "id": 1,
+                        "name": "华为"
+                    },
+                    {
+                        "id": 2,
+                        "name": "豌豆荚"
+                    },
+                    {
+                        "id": 3,
+                        "name": "豌豆荚1"
+                    },
+                    {
+                        "id": 4,
+                        "name": "豌豆荚2"
+                    },
+                    {
+                        "id": 5,
+                        "name": "豌豆荚3"
+                    },
+                    {
+                        "id": 6,
+                        "name": "豌豆荚4"
+                    },
+                    {
+                        "id": 7,
+                        "name": "豌豆荚5"
+                    },
+                    {
+                        "id": 8,
+                        "name": "豌豆荚6"
+                    },
+                    {
+                        "id": 9,
+                        "name": "豌豆荚7"
+                    },
+                    {
+                        "id": 10,
+                        "name": "豌豆荚8"
+                    }
+                ]
+            }
+        },
+        {
+            "url": "/source/list",
+            "desc": "获取source列表",
+            "mock": true,
+            "res": {
+                "code": 200,
+                "msg": "Get address successfully.",
+                "data": [
+                    {
+                        "id": 1,
+                        "name": "厂商预装"
+                    },
+                    {
+                        "id": 2,
+                        "name": "第三方应用商店"
+                    },
+                    {
+                        "id": 3,
+                        "name": "其他Source"
+                    }
+                ]
+            }
+        },
+        {
+            "url": "/app/summarylist",
+            "desc": "应用列表概要",
+            "mock": true,
+            "delay": 1000,
+            "res": {
+                "code": "200",
+                "msg": "Get address successfully.",
+                "data": {
+                    "items": [
+                        {
+                            "appId": 1,
+                            "appName": "UserCare",
+                            "news|1-10": 1,
+                            "allNews|20-100": 1,
+                            "actives|1-10": 1,
+                            "allActives|20-100": 1,
+                            "description": "@csentence",
+                            "isNoGP": "@pick(true, false)"
+                        },
+                        {
+                            "appId": 2,
+                            "appName": "恋爱笔记",
+                            "news|1-10": 1,
+                            "allNews|20-100": 1,
+                            "actives|1-10": 1,
+                            "allActives|20-100": 1,
+                            "description": "@csentence",
+                            "isNoGP": "@pick(true, false)"
+                        }
+                    ],
+                    "pageNo": 1,
+                    "total": 210,
+                    "pageSize": 10
+                }
+            }
+        },
+        {
+            "url": "/channel/allbyapp/[0-9]+",
+            "regexp": true,
+            "desc": "获取NON-GP渠道管理列表",
+            "mock": true,
+            "delay": "1000",
+            "res": {
+                "code": 200,
+                "msg": "Get data success",
+                "data": {
+                    "pageNo":1,
+                    "total":32,
+                    "items|5": [
+                        {
+                            "agent": "@pick(1,2)",
+                            "appId": "@pick(1,2)",
+                            "createdTime": "@date('T')",
+                            "createdUser": "@cname",
+                            "id|+1": 1,
+                            "name": "@cword(4,8)",
+                            "description": "@csentence",
+                            "source": "@pick(1,2,3)",
+                            "tracker": "@word(10)",
+                            "type": "nonGP"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "url": "/channel/summarybyapp",
+            "regexp": true,
+            "desc": "获取渠道列表",
+            "mock": true,
+            "delay": "1000",
+            "res": {
+                "code": 200,
+                "msg": "Get data success",
+                "data": {
+                    "pageNo": 1,
+                    "total": 100,
+                    "items|5-10": [
+                        {
+                            "appId|+1": 1,
+                            "tracker": "@word(10)",
+                            "channelName": "@cword(4,8)",
+                            "news|1-200": 1,
+                            "newsRelativeRatio|-100-100.0-9": 1,
+                            "actives|1-200": 1,
+                            "activesRelativeRatio|-100-100.0-9": 1,
+                            "starts|1-200": 1,
+                            "startsRelativeRatio|-100-100.0-9": 1,
+                            "agent": "@cword(4,8)",
+                            "source": "@cword(4,8)",
+                            "country": "@pick('美国', '中国','海外')"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "url": "/channel/detailbyapp",
+            "desc": "获取渠道留存列表",
+            "mock": true,
+            "delay": "1000",
+            "res": {
+                "code": 200,
+                "msg": "Get data success",
+                "data|10": [
+                    {
+                        "appId|+1": 1,
+                        "channelId": "@word(10)",
+                        "channelName": "@cword(4,8)",
+                        "news|1-200": 1,
+                        "actives|1-200": 1,
+                        "starts|1-200": 1,
+                        "timestamp": "@date('yyyy-MM-dd')",
+                        "keep1Ratio|1-300.3": 1,
+                        "keep3Ratio|1-300.3": 1,
+                        "keep7Ratio|1-300.3": 1,
+                        "keep30Ratio|1-300.3": 1,
+                        "Agent": "@cword(4,8)",
+                        "Source": "@cword(4,8)",
+                        "country": "@pick('美国', '中国','海外')",
+                        "total|1-500": 1,
+                        "startsAvg|1-500": 1
+                    }
+                ]
+            }
+        },
+        {
+            "url": "/channel/linechartbyapp",
+            "desc": "获取渠详细统计信息",
+            "mock": true,
+            "delay": "1000",
+            "res": {
+                "code": 200,
+                "msg": "Get data success",
+                "data": {
+                    "xAxis": {
+                        "name": "Date",
+                        "data": [
+                            "2016/5/1",
+                            "2016/5/2",
+                            "2016/5/3",
+                            "2016/5/4",
+                            "2016/5/5",
+                            "2016/5/6",
+                            "2016/5/7",
+                            "2016/5/8",
+                            "2016/5/9",
+                            "2016/5/10",
+                            "2016/5/11",
+                            "2016/5/12",
+                            "2016/5/13",
+                            "2016/5/14"
+                        ]
+                    },
+                    "series": [
+                        {
+                            "name": "华为预装",
+                            "data|14": [
+                                "@natural(100,1500)"
+                            ]
+                        },
+                        {
+                            "name": "豌豆荚",
+                            "data|14": [
+                                "@natural(100,1500)"
+                            ]
+                        },
+                        {
+                            "name": "360应用市场",
+                            "data|14": [
+                                "@natural(100,1500)"
+                            ]
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "url": "/channel/heapchartbyapp",
+            "desc": "获特定取渠详细统计信息",
+            "mock": true,
+            "delay": "1000",
+            "res": {
+                "code": 200,
+                "msg": "Get data success",
+                "data": {
+                    "xAxis": {
+                        "name": "Date",
+                        "data": [
+                            "2016/5/1",
+                            "2016/5/2",
+                            "2016/5/3",
+                            "2016/5/4",
+                            "2016/5/5",
+                            "2016/5/6",
+                            "2016/5/7",
+                            "2016/5/8",
+                            "2016/5/9",
+                            "2016/5/10",
+                            "2016/5/11",
+                            "2016/5/12",
+                            "2016/5/13",
+                            "2016/5/14"
+                        ]
+                    },
+                    "series": [
+                        {
+                            "name": "俄罗斯",
+                            "data|14": [
+                                "@natural(100,1500)"
+                            ]
+                        },
+                        {
+                            "name": "印度",
+                            "data|14": [
+                                "@natural(100,1500)"
+                            ]
+                        },
+                        {
+                            "name": "巴西",
+                            "data|14": [
+                                "@natural(100,1500)"
+                            ]
+                        },
+                        {
+                            "name": "法国",
+                            "data|14": [
+                                "@natural(100,1500)"
+                            ]
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "url": "/channel/userkeepbyapp",
+            "desc": "获取特定渠道留存列表",
+            "mock": true,
+            "delay": "1000",
+            "res": {
+                "code": 200,
+                "msg": "Get data success",
+                "data": {
+                    "pageNo": 1,
+                    "total": 30,
+                    "items|10": [
+                        {
+                            "appId|+1": 1,
+                            "channelId": "@word(10)",
+                            "channelName": "@cword(4,8)",
+                            "news|1-200": 1,
+                            "actives|1-200": 1,
+                            "starts|1-200": 1,
+                            "timestamp": "@date('yyyy-MM-dd')",
+                            "keep1Ratio|1-100": 1,
+                            "keep3Ratio|1-100": 1,
+                            "keep7Ratio|1-100": 1,
+                            "keep30Ratio|1-100": 1,
+                            "Agent": "@cword(4,8)",
+                            "Source": "@cword(4,8)",
+                            "country": "@pick('美国', '中国','海外')",
+                            "total|1-500": 1,
+                            "startsAvg|1-500": 1
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "url": "/channel/create",
+            "desc": "创建渠道",
+            "mock": true,
+            "delay": "1000",
+            "res": {
+                "code": 200,
+                "msg": "Get data success",
+                "data": ""
+            }
+        },
+        {
+            "url": "/channel/countries",
+            "desc": "获取地域信息",
+            "mock": true,
+            "delay": "1000",
+            "res": {
+                "code": 200,
+                "msg": "Get data success",
+                "data": [
+                    {
+                        "id": 1,
+                        "name": "美国"
+                    },
+                    {
+                        "id": 2,
+                        "name": "巴西"
+                    },
+                    {
+                        "id": 3,
+                        "name": "印度"
+                    },
+                    {
+                        "id": 4,
+                        "name": "墨西哥"
+                    }
+                ]
+            }
+        },
+        {
+            "url": "/",
+            "desc": "Index",
+            "mock": true,
+            "res": {
+                "code": 200,
+                "msg": "Hi, this is mock server.",
+                "data": ""
+            }
+        }
+    ]
+}
+
+
+
+
+
+

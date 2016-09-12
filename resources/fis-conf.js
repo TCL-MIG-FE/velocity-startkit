@@ -1,6 +1,7 @@
 fis.require("jello")(fis);
 
 fis.set('project.ignore', [
+    "mock-server/**",
     "fis-conf.js",
     "conf/**",
     ".gitignore",

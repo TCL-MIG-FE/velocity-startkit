@@ -1,0 +1,23 @@
+#set($title = "User Tasks")
+#set($keywords = "tasks")
+#set($description = "User Tasks description")
+#set($activeTab = "tasks")
+#extends("../layout/layout.vm")
+
+    #require('src/pages/tasks/style.less')
+
+    #block("body_content")
+        <div class="section">
+            This is the task page
+        </div>
+
+         <a href="/"> Back Home Page</a>
+    #end
+
+
+
+    #script()
+    require(['src/pages/tasks/index'])
+    #end
+
+#end

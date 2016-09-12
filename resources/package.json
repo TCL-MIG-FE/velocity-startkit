@@ -1,56 +1,59 @@
 {
-  "name": "velocity-fis3-startkit",
-  "version": "1.0.0",
-  "description": "velocity with fis3 scaffold",
-  "main": "index.js",
-  "scripts": {
-    "clean": "fis3 server clean",
-    "release": "fis3 release -wcL",
-    "relase-clean": "run-s clean release",
-    "server": "fis3 server start -p 4000 --type jello",
-    "rm-static": "rm -rf ../static",
-    "build-static": "fis3 release prod -c",
-    "build": "cross-env NODE_ENV=production run-s rm-static build-static",
-    "start": "run-p release server"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git@github.com:TCL-MIG-FE/velocity-fis3-startkit.git"
-  },
-  "keywords": [
-    "fis3",
-    "jello",
-    "scaffold"
-  ],
-  "author": "lzhao@tcl.com",
-  "license": "BSD",
-  "homepage": "https://github.com/TCL-MIG-FE/react-web-spa-startkit",
-  "dependencies": {
-    "bootstrap": "^3.3.7",
-    "jquery": "^3.1.0",
-    "process": "^0.11.7"
-  },
-  "devDependencies": {
-    "cross-env": "^2.0.0",
-    "fis-optimizer-clean-css": "0.0.12",
-    "fis-optimizer-png-compressor": "^0.1.6",
-    "fis-optimizer-uglify-js": "^0.2.2",
-    "fis-parser-babel-5.x": "^1.4.0",
-    "fis-postprocessor-autoprefixer": "0.0.5",
-    "fis3": "^3.4.22",
-    "fis3-deploy-local-deliver": "^1.0.0",
-    "fis3-deploy-replace": "^1.0.2",
-    "fis3-hook-commonjs": "^0.1.25",
-    "fis3-hook-node_modules": "^2.2.7",
-    "fis3-hook-relative": "^1.0.9",
-    "fis3-jello": "^1.0.13",
-    "fis3-packager-deps-pack": "^0.1.2",
-    "fis3-parser-less-2.x": "^0.1.4",
-    "fis3-postpackager-loader": "^2.1.3",
-    "fis3-preprocessor-autoprefixer": "^0.1.0",
-    "fis3-preprocessor-extlang": "^1.1.9",
-    "fis3-preprocessor-js-require-css": "^0.1.0",
-    "fis3-preprocessor-js-require-file": "^0.1.0",
-    "npm-run-all": "^2.3.0"
-  }
+    "name": "velocity-fis3-startkit",
+    "version": "1.0.0",
+    "description": "velocity with fis3 scaffold",
+    "main": "index.js",
+    "scripts": {
+        "clean": "fis3 server clean",
+        "release": "fis3 release -wcL",
+        "relase-clean": "run-s clean release",
+        "server": "fis3 server start -p 5000 --type jello --no-browse",
+        "rm-static": "rm -rf ../static",
+        "build-static": "fis3 release prod -c",
+        "build": "cross-env NODE_ENV=production run-s rm-static build-static",
+        "mock": "node mock-server/server.js 7777",
+        "start": "run-p mock release server"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git@github.com:TCL-MIG-FE/velocity-fis3-startkit.git"
+    },
+    "keywords": [
+        "fis3",
+        "jello",
+        "scaffold"
+    ],
+    "author": "lzhao@tcl.com",
+    "license": "BSD",
+    "homepage": "https://github.com/TCL-MIG-FE/react-web-spa-startkit",
+    "dependencies": {
+        "bootstrap": "^3.3.7",
+        "jquery": "^3.1.0",
+        "process": "^0.11.7"
+    },
+    "devDependencies": {
+        "cross-env": "^2.0.0",
+        "express": "^4.14.0",
+        "fis-optimizer-clean-css": "0.0.12",
+        "fis-optimizer-png-compressor": "^0.1.6",
+        "fis-optimizer-uglify-js": "^0.2.2",
+        "fis-parser-babel-5.x": "^1.4.0",
+        "fis-postprocessor-autoprefixer": "0.0.5",
+        "fis3": "^3.4.22",
+        "fis3-deploy-local-deliver": "^1.0.0",
+        "fis3-deploy-replace": "^1.0.2",
+        "fis3-hook-commonjs": "^0.1.25",
+        "fis3-hook-node_modules": "^2.2.7",
+        "fis3-hook-relative": "^1.0.9",
+        "fis3-jello": "^1.0.13",
+        "fis3-packager-deps-pack": "^0.1.2",
+        "fis3-parser-less-2.x": "^0.1.4",
+        "fis3-postpackager-loader": "^2.1.3",
+        "fis3-preprocessor-autoprefixer": "^0.1.0",
+        "fis3-preprocessor-extlang": "^1.1.9",
+        "fis3-preprocessor-js-require-css": "^0.1.0",
+        "fis3-preprocessor-js-require-file": "^0.1.0",
+        "mockjs": "^1.0.0",
+        "npm-run-all": "^2.3.0"
+    }
 }

@@ -1,6 +1,7 @@
-#set($title = "config page")
+#set($title = "User Settings")
 #set($keywords = "config")
-#set($description = "config page for startkit")
+#set($description = "User Settings")
+#set($activeTab = "settings")
 #extends("../layout/layout.vm")
 
     #require('src/pages/config/style.less')

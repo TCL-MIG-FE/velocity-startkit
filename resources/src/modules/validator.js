@@ -1,4 +1,4 @@
-import $ from 'jquery';
+import $ from "jquery";
 import "../plugins/validator/jquery-validate";
 
 $.validateExtend({
@@ -12,20 +12,32 @@ $.validateExtend({
 });
 
 
-const validate = (element, conditions, callback) =>{
+const validate = (element, conditions, callback) => {
     var $ele = $(element);
     !$ele.is("form") && ( $ele = $ele.find("form").eq(0));
     if ($ele.length == 0) return;
+    
     return $ele.validate({
         onKeyup: true,
         sendForm: false,
         
         eachInvalidField() {
-            $(this).closest("div.form-group").addClass("has-error");
+            var $this = $(this),
+                $parent = $this.closest("div.form-group").addClass("has-error"),
+                $msgBlock = $parent.find(".help-block"),
+                msg = $this.data("msg");
+            if( !$msgBlock.length ){
+                $msgBlock = $('<p class="help-block"></p>').text( msg );
+                $this.parent().append($msgBlock);
+            }else{
+                $msgBlock.text(msg);
+            }
             
         },
         eachValidField() {
-            $(this).closest("div.form-group").removeClass("has-error");
+            var $parent = $(this).closest("div.form-group");
+            $parent.removeClass("has-error");
+            $parent.find(".help-block").remove();
         },
         
         valid() {
